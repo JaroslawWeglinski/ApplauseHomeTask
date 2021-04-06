@@ -1,0 +1,13 @@
+mat-form-field {
+  align-content: center;
+  padding-left: 5%;
+  width: 95%;
+}
+
+table {
+  width: 100%;
+}
+
+mat-header-cell, mat-cell {
+  justify-content: center;
+}

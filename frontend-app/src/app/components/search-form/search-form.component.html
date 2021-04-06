@@ -1,0 +1,49 @@
+<div>
+  <mat-form-field appearance="fill">
+    <mat-label>Countries</mat-label>
+    <mat-select #countrySelect (openedChange)="selectionChange($event)" [formControl]="countries" multiple>
+      <mat-option [value]="1" (click)="selectAllCountries(ev1)"
+                  #ev1
+      >ALL
+      </mat-option>
+      <mat-option *ngFor="let country of countryList" [value]="country">{{country}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<div>
+  <mat-form-field appearance="fill">
+    <mat-label>Devices</mat-label>
+    <mat-select #deviceSelect (openedChange)="selectionChange($event)" [formControl]="devices" multiple>
+      <mat-option [value]="1" (click)="selectAllDevices(ev2)"
+                  #ev2
+      >ALL
+      </mat-option>
+      <mat-option *ngFor="let device of deviceList" [value]="device.id">{{device.description}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<div class="mat-elevation-z8">
+  <mat-table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="firstName">
+      <mat-header-cell *matHeaderCellDef> First Name</mat-header-cell>
+      <mat-cell *matCellDef="let tester"> {{tester.firstName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="lastName">
+      <mat-header-cell *matHeaderCellDef> Last Name</mat-header-cell>
+      <mat-cell *matCellDef="let tester"> {{tester.lastName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="bugsTotal">
+      <mat-header-cell *matHeaderCellDef> Experience</mat-header-cell>
+      <mat-cell *matCellDef="let tester"> {{tester.bugsTotal}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+</div>
