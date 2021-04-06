@@ -28,7 +28,7 @@ Install the Angular CLI: \
 npm install -g @angular/cli
 
 Compile and run ApplauseHomeTaskApplication. \
-Then go to frontend-app directory and run command: ng serve. \
+Then go to frontend-app directory and run command: ng serve. 
 
 Application will be available in your browser at: http://localhost:4200/
 
